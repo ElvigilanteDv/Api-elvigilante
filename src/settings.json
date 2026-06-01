@@ -1,0 +1,128 @@
+{
+  "name": "API DE EL VIGILANTE",
+  "version": "1.0",
+  "description": "API DE EL VIGILANTE Oficial - Tu mejor aliado para integraciones.",
+  "header": {
+    "status": "ONLINE",
+    "imageSrc": [
+      "https://files.catbox.moe/0tha19.png"
+    ],
+    "imageSize": {
+      "mobile": "80%",
+      "tablet": "40%",
+      "desktop": "40%"
+    }
+  },
+  "apiSettings": {
+    "creator": "El Vigilante - Copyright API DE EL VIGILANTE 2026",
+    "limit": "5500"
+  },
+  "links": [
+    {
+      "name": "Source Code",
+      "url": "https://github.com/EdwardXZZ/Server-EdwardXZZ-"
+    },
+    {
+      "name": "Contact Me",
+      "url": "https://wa.me/59177474230"
+    }
+  ],
+  "categories": [
+    {
+      "name": "🤖 AI (Inteligencia Artificial)",
+      "items": [
+        {
+          "name": "Gemini AI",
+          "desc": "Chatea con Gemini Google AI",
+          "path": "/ai/gemini?text=",
+          "innerDesc": "🧠 Chatea con Google Gemini AI\n\nEjemplo: /ai/gemini?text=Hola"
+        }
+      ]
+    },
+    {
+      "name": "🎲 Random",
+      "items": [
+        {
+          "name": "Memes",
+          "desc": "Meme aleatorio en español",
+          "path": "/random/meme",
+          "innerDesc": "🤣 Meme aleatorio\n\nVer: /random/meme\nDescargar: /random/meme?download=true"
+        }
+      ]
+    },
+    {
+      "name": "🔍 Herramientas de Búsqueda",
+      "items": [
+        {
+          "name": "YouTube",
+          "desc": "Búsqueda de videos",
+          "path": "/search/youtube?q="
+        },
+        {
+          "name": "TikTok Search",
+          "desc": "Buscar videos en TikTok",
+          "path": "/search/tiktok?query=",
+          "innerDesc": "🎵 Buscar videos en TikTok\n\nParámetros:\n• query - Término de búsqueda\n• limit - Cantidad de resultados (1-30, default: 10)\n\nEjemplo: /search/tiktok?query=badbunny&limit=5"
+        }
+      ]
+    },
+    {
+      "name": "📥 Descargas",
+      "items": [
+        {
+          "name": "YouTube Audio",
+          "desc": "Descargar audio de YouTube como MP3",
+          "path": "/download/ytaudio?url=",
+          "innerDesc": "🎵 Descargar audio de YouTube\n\nUso: ?url=YOUTUBE_URL\nDescargar: &download=true"
+        },
+        {
+          "name": "YouTube Video",
+          "desc": "Descargar video de YouTube como MP4",
+          "path": "/download/ytvideo?url=",
+          "innerDesc": "🎬 Descargar video de YouTube\n\nParámetros:\n• url - URL de YouTube\n• quality - 360, 720, 1080\n• download=true - Descarga directa"
+        },
+        {
+          "name": "TikTok Downloader",
+          "desc": "Descargar video de TikTok sin marca de agua",
+          "path": "/download/tiktok?url=",
+          "innerDesc": "📱 Descargar videos de TikTok sin marca de agua\n\nUso: ?url=TIKTOK_URL\nDescargar: &download=true"
+        },
+        {
+          "name": "Mediafire Downloader",
+          "desc": "Descargar archivos de Mediafire",
+          "path": "/download/mediafire?url=",
+          "innerDesc": "📦 Descargar archivos de Mediafire\n\nUso: ?url=MEDIAFIRE_URL\nDescargar: &download=true"
+        },
+        {
+          "name": "Pinterest Downloader",
+          "desc": "Buscar y descargar imágenes/videos de Pinterest",
+          "path": "/pinterest?query=",
+          "innerDesc": "🎨 Buscar o descargar de Pinterest\n\nBuscar: ?query=TÉRMINO&limit=20\nDescargar: ?url=PINTEREST_PIN_URL\nDescarga directa: &download=true"
+        },
+        {
+          "name": "Facebook Downloader",
+          "desc": "Descargar videos de Facebook",
+          "path": "/download/facebook?url=",
+          "innerDesc": "📘 Descargar videos de Facebook\n\nUso: ?url=FB_VIDEO_URL\nDescarga directa: &download=true"
+        }
+      ]
+    },
+    {
+      "name": "🛠️ Herramientas",
+      "items": [
+        {
+          "name": "Traductor",
+          "desc": "Traducir texto a cualquier idioma",
+          "path": "/translate?text=",
+          "innerDesc": "🌐 Traduce texto a cualquier idioma\n\nParámetros:\n• text - Texto a traducir\n• target - Idioma destino (default: es)\n\nEjemplo: /translate?text=Hello&target=es\nCódigos: es, en, fr, it, pt, de, ja, ko, zh, ru"
+        },
+        {
+          "name": "Acortador de URL",
+          "desc": "Acortar enlaces largos usando TinyURL",
+          "path": "/shorten?url=",
+          "innerDesc": "🔗 Acorta enlaces largos\n\nUso: ?url=URL_LARGA\n\nEjemplo: /shorten?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        }
+      ]
+    }
+  ]
+        }
