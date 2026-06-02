@@ -38,9 +38,17 @@ https://github.com/ElvigilanteDv
 
 ---
 
-🌟 Mi objetivo
+🌟 Mi Objetivo
 
 Brindar una API moderna y confiable para la creación de bots y herramientas avanzadas sobre WhatsApp, facilitando el desarrollo de proyectos personales y profesionales.
+
+---
+
+📜 Créditos
+
+Si utilizas, modificas o clonas este proyecto, por favor conserva los créditos correspondientes al autor original.
+
+Desarrollado por EL VIGILANTE.
 
 ---
 
@@ -54,4 +62,6 @@ Este proyecto fue desarrollado con fines educativos y tecnológicos. El uso de l
    EL VIGILANTE API
   <br>
   Desarrollado por EL VIGILANTE
+</p><p align="center">
+  <img src="https://files.catbox.moe/22vhqk.jpeg" width="180">
 </p>
