@@ -9,11 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -22,8 +18,7 @@
             overflow-x: hidden;
             background-image: 
                 radial-gradient(ellipse at 20% 50%, rgba(155, 77, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(155, 77, 255, 0.03) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, rgba(100, 50, 180, 0.04) 0%, transparent 50%);
+                radial-gradient(ellipse at 80% 20%, rgba(155, 77, 255, 0.03) 0%, transparent 50%);
         }
 
         :root {
@@ -31,14 +26,10 @@
             --bg-card: rgba(18, 14, 28, 0.85);
             --border: #2a1f40;
             --accent: #9b4dff;
-            --accent-hover: #b87aff;
             --text: #d9d0e6;
             --text-muted: #988ab3;
-            --gradient-1: linear-gradient(135deg, #9b4dff, #6a1b9a);
-            --gradient-2: linear-gradient(135deg, #b87aff, #7c3aed);
         }
 
-        /* ========== LOADING SCREEN ========== */
         #loadingScreen {
             position: fixed;
             top: 0;
@@ -65,147 +56,6 @@
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* ========== REPRODUCTOR FLOTANTE ========== */
-        .music-player {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 300px;
-            background: rgba(18, 14, 28, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 16px;
-            z-index: 9999;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(155, 77, 255, 0.15);
-            border: 1px solid #2a1f40;
-            transition: all 0.3s ease;
-        }
-
-        .music-player.minimized {
-            width: 50px;
-            padding: 10px;
-            border-radius: 50px;
-        }
-
-        .music-player.minimized .music-info,
-        .music-player.minimized .music-controls,
-        .music-player.minimized .progress-container {
-            display: none;
-        }
-
-        .music-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            color: #d9d0e6;
-        }
-
-        .music-title {
-            font-size: 11px;
-            font-weight: 600;
-            opacity: 0.7;
-            letter-spacing: 0.5px;
-        }
-
-        .music-toggle-min {
-            background: none;
-            border: none;
-            color: #d9d0e6;
-            cursor: pointer;
-            font-size: 16px;
-            opacity: 0.6;
-            transition: 0.2s;
-        }
-
-        .music-toggle-min:hover { opacity: 1; }
-
-        .music-info {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .song-name {
-            color: #d9d0e6;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-
-        .artist-name {
-            color: #9b4dff;
-            font-size: 11px;
-            font-weight: 500;
-        }
-
-        .progress-container {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            height: 4px;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-
-        .progress-bar {
-            background: var(--gradient-1);
-            border-radius: 10px;
-            height: 100%;
-            width: 0%;
-            transition: width 0.1s linear;
-            box-shadow: 0 0 10px rgba(155, 77, 255, 0.5);
-        }
-
-        .time-info {
-            display: flex;
-            justify-content: space-between;
-            color: rgba(155, 77, 255, 0.7);
-            font-size: 10px;
-            margin-bottom: 8px;
-        }
-
-        .music-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 14px;
-            margin-top: 6px;
-        }
-
-        .control-btn {
-            background: rgba(155, 77, 255, 0.15);
-            border: none;
-            border-radius: 50%;
-            width: 34px;
-            height: 34px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: #d9d0e6;
-            font-size: 13px;
-        }
-
-        .control-btn:hover {
-            background: rgba(155, 77, 255, 0.35);
-            transform: scale(1.05);
-        }
-
-        .control-btn.play-btn {
-            background: var(--gradient-1);
-            width: 44px;
-            height: 44px;
-            color: white;
-            font-size: 16px;
-            box-shadow: 0 0 20px rgba(155, 77, 255, 0.4);
-        }
-
-        .control-btn.play-btn:hover {
-            background: var(--gradient-2);
-            box-shadow: 0 0 30px rgba(155, 77, 255, 0.6);
-        }
-
-        /* ========== TOP BAR ========== */
         .top-bar {
             position: fixed;
             top: 0;
@@ -222,11 +72,7 @@
             z-index: 1000;
         }
 
-        .top-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+        .top-bar-left { display: flex; align-items: center; gap: 16px; }
 
         .menu-toggle {
             width: 36px;
@@ -254,28 +100,6 @@
             border-radius: 2px;
         }
 
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--gradient-1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: 0 0 15px rgba(155, 77, 255, 0.4);
-        }
-
         .api-name {
             font-size: 20px;
             font-weight: 800;
@@ -283,25 +107,20 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: -0.5px;
         }
 
         .pro-badge {
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #9b4dff, #6a1b9a);
             color: white;
             font-weight: 700;
             font-size: 10px;
             padding: 4px 10px;
             border-radius: 20px;
-            letter-spacing: 0.5px;
+            margin-left: 10px;
             box-shadow: 0 0 12px rgba(155, 77, 255, 0.3);
         }
 
-        .user-section {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .user-section { display: flex; align-items: center; gap: 10px; }
 
         .logout-btn {
             background: rgba(155, 77, 255, 0.1);
@@ -312,18 +131,10 @@
             cursor: pointer;
             font-size: 12px;
             transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
-        .logout-btn:hover {
-            background: rgba(155, 77, 255, 0.2);
-            color: #d9d0e6;
-            border-color: #9b4dff;
-        }
+        .logout-btn:hover { background: rgba(155, 77, 255, 0.2); color: #d9d0e6; }
 
-        /* ========== SIDEBAR ========== */
         .sidebar {
             position: fixed;
             top: 64px;
@@ -353,10 +164,7 @@
             z-index: 998;
         }
 
-        .sidebar-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .sidebar-overlay.active { opacity: 1; visibility: visible; }
 
         .sidebar-nav { padding: 16px 0; }
 
@@ -375,24 +183,8 @@
             border-radius: 8px;
         }
 
-        .sidebar-item:hover {
-            background: rgba(155, 77, 255, 0.1);
-            color: #c9b0ff;
-            border-left-color: transparent;
-        }
-
-        .sidebar-item.active {
-            background: rgba(155, 77, 255, 0.15);
-            border-left-color: #9b4dff;
-            color: #c9b0ff;
-            font-weight: 600;
-        }
-
-        .sidebar-item i {
-            width: 20px;
-            text-align: center;
-            font-size: 14px;
-        }
+        .sidebar-item:hover { background: rgba(155, 77, 255, 0.1); color: #c9b0ff; }
+        .sidebar-item.active { background: rgba(155, 77, 255, 0.15); border-left-color: #9b4dff; color: #c9b0ff; }
 
         .sidebar-category {
             padding: 20px 20px 8px;
@@ -404,7 +196,6 @@
             margin-top: 8px;
         }
 
-        /* ========== MAIN CONTENT ========== */
         .main-content {
             margin-top: 80px;
             padding: 28px 32px;
@@ -414,17 +205,11 @@
             min-height: calc(100vh - 120px);
         }
 
-        /* ========== HOME PAGE ========== */
-        .hero-section {
-            text-align: center;
-            margin-bottom: 50px;
-            animation: fadeInUp 0.6s ease;
-        }
+        .hero-section { text-align: center; margin-bottom: 50px; animation: fadeInUp 0.6s ease; }
 
-        .hero-image-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-image {
@@ -433,21 +218,11 @@
             border-radius: 50%;
             border: 3px solid #9b4dff;
             box-shadow: 0 0 40px rgba(155, 77, 255, 0.3), 0 20px 40px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
             transition: all 0.3s ease;
         }
 
-        .hero-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(155, 77, 255, 0.5), 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .hero-glow {
-            position: absolute;
-            inset: -20px;
-            background: radial-gradient(circle, rgba(155, 77, 255, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
+        .hero-image:hover { transform: scale(1.05); box-shadow: 0 0 60px rgba(155, 77, 255, 0.5); }
 
         .hero-title {
             font-size: 48px;
@@ -457,15 +232,9 @@
             background-clip: text;
             color: transparent;
             margin-bottom: 8px;
-            letter-spacing: -1px;
         }
 
-        .hero-subtitle {
-            font-size: 16px;
-            color: #988ab3;
-            font-weight: 400;
-            margin-bottom: 16px;
-        }
+        .hero-subtitle { font-size: 16px; color: #988ab3; font-weight: 400; margin-bottom: 16px; }
 
         .hero-version {
             display: inline-flex;
@@ -495,53 +264,15 @@
             text-align: center;
             border: 1px solid #2a1f40;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(155, 77, 255, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+        .stat-card:hover { transform: translateY(-6px); border-color: #9b4dff; }
 
-        .stat-card:hover::before { opacity: 1; }
+        .stat-icon { font-size: 28px; margin-bottom: 12px; color: #9b4dff; }
 
-        .stat-card:hover {
-            transform: translateY(-6px);
-            border-color: #9b4dff;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(155, 77, 255, 0.15);
-        }
+        .stat-number { font-size: 40px; font-weight: 800; color: #d9d0e6; margin-bottom: 4px; }
 
-        .stat-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .stat-number {
-            font-size: 40px;
-            font-weight: 800;
-            color: #d9d0e6;
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            font-weight: 500;
-            color: #988ab3;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .stat-label { font-size: 13px; color: #988ab3; text-transform: uppercase; letter-spacing: 0.5px; }
 
         .features-grid {
             display: grid;
@@ -552,18 +283,13 @@
 
         .feature-card {
             background: rgba(18, 14, 28, 0.7);
-            backdrop-filter: blur(12px);
             border-radius: 16px;
             padding: 24px;
             border: 1px solid #2a1f40;
             transition: all 0.3s ease;
         }
 
-        .feature-card:hover {
-            border-color: #9b4dff;
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-        }
+        .feature-card:hover { border-color: #9b4dff; transform: translateY(-4px); }
 
         .feature-icon {
             width: 44px;
@@ -578,283 +304,19 @@
             margin-bottom: 16px;
         }
 
-        .feature-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #d9d0e6;
-            margin-bottom: 6px;
-        }
+        .feature-title { font-size: 16px; font-weight: 700; color: #d9d0e6; margin-bottom: 6px; }
 
-        .feature-desc {
-            font-size: 13px;
-            color: #988ab3;
-            line-height: 1.5;
-        }
+        .feature-desc { font-size: 13px; color: #988ab3; line-height: 1.5; }
 
-        /* ========== STATUS PAGE ========== */
-        .page-header {
-            margin-bottom: 30px;
-            animation: fadeInUp 0.5s ease;
-        }
-
-        .page-title {
-            font-size: 28px;
-            font-weight: 800;
-            color: #d9d0e6;
-            margin-bottom: 6px;
-        }
-
-        .page-subtitle {
-            font-size: 14px;
-            color: #988ab3;
-        }
-
-        .status-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .status-card {
-            background: rgba(18, 14, 28, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid #2a1f40;
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .status-card:hover {
-            border-color: #9b4dff;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.4);
-        }
-
-        .status-indicator {
-            width: 10px;
-            height: 10px;
-            background: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
-        }
-
-        .status-card-title {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #6b5b85;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .status-card-value {
-            font-size: 20px;
-            font-weight: 700;
-            color: #d9d0e6;
-        }
-
-        /* ========== ENDPOINTS ========== */
-        .search-box {
-            margin-bottom: 28px;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 14px 20px;
-            border: 1px solid #2a1f40;
-            border-radius: 16px;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            background: rgba(18, 14, 28, 0.6);
-            color: #d9d0e6;
-        }
-
-        .search-input::placeholder { color: #6b5b85; }
-
-        .search-input:focus {
-            outline: none;
-            border-color: #9b4dff;
-            box-shadow: 0 0 0 4px rgba(155, 77, 255, 0.1);
-            background: rgba(18, 14, 28, 0.9);
-        }
-
-        .endpoints-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 16px;
-        }
-
-        .endpoint-card {
-            background: rgba(18, 14, 28, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid #2a1f40;
-            border-radius: 16px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .endpoint-card:hover {
-            border-color: #9b4dff;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .endpoint-method {
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #10b981;
-            background: rgba(16, 185, 129, 0.1);
-            padding: 3px 8px;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            display: inline-block;
-        }
-
-        .endpoint-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: #d9d0e6;
-            margin-bottom: 4px;
-        }
-
-        .endpoint-desc {
-            font-size: 12px;
-            color: #988ab3;
-        }
-
-        .endpoint-btn {
-            background: rgba(155, 77, 255, 0.15);
-            border: 1px solid rgba(155, 77, 255, 0.3);
-            color: #c9b0ff;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .endpoint-btn:hover {
-            background: rgba(155, 77, 255, 0.3);
-            border-color: #9b4dff;
-            box-shadow: 0 0 15px rgba(155, 77, 255, 0.3);
-        }
-
-        /* ========== MODAL ========== */
-        .modal-content {
-            border: none;
-            border-radius: 20px;
-            background: #120e1c;
-            color: #d9d0e6;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-            border: 1px solid #2a1f40;
-        }
-
-        .modal-header {
-            border-bottom: 1px solid #2a1f40;
-            padding: 20px 24px;
-        }
-
-        .modal-body { padding: 24px; }
-
-        .modal-footer {
+        .footer {
+            text-align: center;
+            padding: 28px;
             border-top: 1px solid #2a1f40;
-            padding: 16px 24px;
-        }
-
-        .modal-header .btn-close { filter: invert(1); }
-
-        .api-endpoint-box {
-            background: rgba(0,0,0,0.3);
-            padding: 14px;
-            border-radius: 12px;
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 13px;
-            color: #c9b0ff;
-            word-break: break-all;
-            margin-bottom: 20px;
-            border: 1px solid #2a1f40;
-        }
-
-        .live-url-box {
-            background: rgba(0,0,0,0.3);
-            padding: 14px 16px;
-            border-radius: 12px;
-            font-family: 'SF Mono', 'Fira Code', monospace;
-            font-size: 13px;
-            color: #9b4dff;
-            word-break: break-all;
-            margin-bottom: 20px;
-            border: 1px solid #2a1f40;
-            display: flex;
-            align-items: center;
-        }
-
-        .param-input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #2a1f40;
-            border-radius: 12px;
-            font-size: 14px;
-            margin-bottom: 12px;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-            background: rgba(0,0,0,0.3);
-            color: #d9d0e6;
-        }
-
-        .param-input:focus {
-            outline: none;
-            border-color: #9b4dff;
-            box-shadow: 0 0 0 3px rgba(155, 77, 255, 0.15);
-        }
-
-        .response-box {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid #2a1f40;
-            color: #c9b0ff;
-            border-radius: 12px;
-            padding: 16px;
-            font-family: 'SF Mono', 'Fira Code', monospace;
+            margin-top: 60px;
             font-size: 12px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            max-height: 400px;
-            overflow-y: auto;
+            color: #6b5b85;
         }
 
-        .submit-btn {
-            background: var(--gradient-1);
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(155, 77, 255, 0.3);
-        }
-
-        .submit-btn:hover {
-            background: var(--gradient-2);
-            box-shadow: 0 6px 25px rgba(155, 77, 255, 0.5);
-            transform: translateY(-1px);
-        }
-
-        /* ========== AUTH SCREEN ========== */
         #authScreen {
             position: fixed;
             top: 0;
@@ -893,18 +355,9 @@
             margin-bottom: 20px;
         }
 
-        .auth-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #d9d0e6;
-            margin-bottom: 4px;
-        }
+        .auth-title { font-size: 22px; font-weight: 800; color: #d9d0e6; margin-bottom: 4px; }
 
-        .auth-subtitle {
-            font-size: 13px;
-            color: #988ab3;
-            margin-bottom: 20px;
-        }
+        .auth-subtitle { font-size: 13px; color: #988ab3; margin-bottom: 20px; }
 
         .auth-form input {
             width: 100%;
@@ -918,14 +371,10 @@
             transition: all 0.2s;
         }
 
-        .auth-form input:focus {
-            border-color: #9b4dff;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(155, 77, 255, 0.1);
-        }
+        .auth-form input:focus { border-color: #9b4dff; outline: none; }
 
         .auth-btn {
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #9b4dff, #6a1b9a);
             color: white;
             border: none;
             padding: 12px 28px;
@@ -936,70 +385,97 @@
             transition: all 0.2s;
             width: 100%;
             margin-top: 4px;
-            box-shadow: 0 4px 20px rgba(155, 77, 255, 0.3);
         }
 
-        .auth-btn:hover {
-            background: var(--gradient-2);
-            box-shadow: 0 6px 30px rgba(155, 77, 255, 0.5);
-        }
+        .auth-btn:hover { background: linear-gradient(135deg, #b87aff, #8a2be2); }
 
-        .auth-link {
-            color: #9b4dff;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-            font-size: 13px;
-            display: inline-block;
-            margin-top: 12px;
-        }
+        .auth-link { color: #9b4dff; cursor: pointer; font-size: 13px; display: inline-block; margin-top: 12px; }
 
         .auth-link:hover { color: #c9b0ff; }
 
-        .auth-divider {
-            color: #6b5b85;
-            margin: 14px 0;
-            font-size: 12px;
+        .auth-divider { color: #6b5b85; margin: 14px 0; font-size: 12px; }
+
+        .music-player {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 300px;
+            background: rgba(18, 14, 28, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 16px;
+            z-index: 9999;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid #2a1f40;
+            transition: all 0.3s ease;
         }
 
-        /* ========== FOOTER ========== */
-        .footer {
-            text-align: center;
-            padding: 28px;
-            border-top: 1px solid #2a1f40;
-            margin-top: 60px;
-            font-size: 12px;
-            color: #6b5b85;
+        .music-player.minimized { width: 50px; padding: 10px; border-radius: 50px; }
+        .music-player.minimized .music-info,
+        .music-player.minimized .music-controls,
+        .music-player.minimized .progress-container { display: none; }
+
+        .music-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+
+        .music-title { font-size: 11px; font-weight: 600; opacity: 0.7; }
+
+        .music-info { text-align: center; margin-bottom: 10px; }
+
+        .song-name { color: #d9d0e6; font-size: 14px; font-weight: 600; }
+
+        .artist-name { color: #9b4dff; font-size: 11px; }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            height: 4px;
+            margin: 10px 0;
+            cursor: pointer;
         }
 
-        /* ========== ANIMATIONS ========== */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .progress-bar {
+            background: linear-gradient(135deg, #9b4dff, #6a1b9a);
+            border-radius: 10px;
+            height: 100%;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .time-info { display: flex; justify-content: space-between; color: rgba(155, 77, 255, 0.7); font-size: 10px; }
+
+        .music-controls { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 6px; }
+
+        .control-btn {
+            background: rgba(155, 77, 255, 0.15);
+            border: none;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            color: #d9d0e6;
+            font-size: 13px;
+        }
+
+        .control-btn.play-btn {
+            background: linear-gradient(135deg, #9b4dff, #6a1b9a);
+            width: 44px;
+            height: 44px;
         }
 
         @media (max-width: 768px) {
             .hero-title { font-size: 34px; }
             .main-content { padding: 20px 16px; }
-            .top-bar { padding: 0 16px; }
-            .api-name { font-size: 18px; }
-            .auth-card { padding: 28px; }
             .stats-grid { grid-template-columns: 1fr 1fr; }
             .features-grid { grid-template-columns: 1fr; }
-            .endpoints-grid { grid-template-columns: 1fr; }
-            .music-player { width: 260px; }
         }
     </style>
 </head>
 <body>
-    <!-- LOADING SCREEN -->
     <div id="loadingScreen">
         <div class="spinner"></div>
-        <p style="margin-top: 16px; font-weight: 500; color: #988ab3; font-size: 14px;">Cargando API DE EL VIGILANTE</p>
+        <p style="margin-top: 16px; font-weight: 500; color: #988ab3;">Cargando API DE EL VIGILANTE</p>
     </div>
 
-    <!-- PANTALLA DE AUTENTICACIÓN -->
     <div id="authScreen">
         <div class="auth-card">
             <img src="https://files.catbox.moe/0tha19.png" alt="El Vigilante" class="auth-logo">
@@ -1009,11 +485,10 @@
         </div>
     </div>
 
-    <!-- REPRODUCTOR DE MÚSICA FLOTANTE -->
     <div class="music-player" id="musicPlayer">
         <div class="music-header">
             <span class="music-title">🎵 ACENTO · QUINTO REAL</span>
-            <button class="music-toggle-min" id="toggleMinimize">−</button>
+            <button class="music-toggle-min" id="toggleMinimize" style="background:none;border:none;color:#d9d0e6;cursor:pointer;">−</button>
         </div>
         <div class="music-info">
             <div class="song-name" id="songName">Una vaina loca</div>
@@ -1034,20 +509,15 @@
     </div>
     <audio id="audioPlayer"></audio>
 
-    <!-- TOP BAR -->
     <div class="top-bar" id="topBar" style="display: none;">
         <div class="top-bar-left">
             <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
-            <div class="logo-container">
-                <div class="logo-icon"><i class="fas fa-shield-haltered"></i></div>
-                <div class="api-name">EL VIGILANTE</div>
-                <span class="pro-badge">PRO</span>
-            </div>
+            <div class="api-name">EL VIGILANTE</div>
+            <span class="pro-badge">PRO</span>
         </div>
         <div class="user-section" id="userSection"></div>
     </div>
 
-    <!-- SIDEBAR -->
     <div class="sidebar-overlay" id="sidebarOverlay" style="display: none;"></div>
     <div class="sidebar" id="sidebar" style="display: none;">
         <div class="sidebar-nav">
@@ -1059,48 +529,15 @@
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
     <div class="main-content" id="mainContent" style="display: none;"></div>
 
-    <!-- FOOTER -->
     <div class="footer" id="footer" style="display: none;">
-        <p id="footerText">🛡️ API DE EL VIGILANTE · Plan Pro · Música: Acento Quinto Real</p>
-    </div>
-
-    <!-- MODAL PARA ENDPOINTS -->
-    <div class="modal fade" id="apiModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>
-                        <h5 class="modal-title" id="modalTitle"></h5>
-                        <p class="modal-desc" id="modalDesc" style="font-size:13px;color:#988ab3;"></p>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="api-endpoint-box" id="endpointBox" style="display: none;"></div>
-                    <div class="live-url-box" id="liveUrlBox" style="display: none;">
-                        <i class="fas fa-link me-2"></i> <span id="liveUrlText">https://ejemplo.com/api</span>
-                    </div>
-                    <div id="paramsContainer"></div>
-                    <div id="loadingContainer" style="display: none; text-align: center; padding: 40px;">
-                        <div class="spinner"></div>
-                    </div>
-                    <div id="responseContainer"></div>
-                </div>
-                <div class="modal-footer">
-                    <button class="submit-btn" id="submitBtn" style="display: none;">
-                        <i class="fas fa-paper-plane me-2"></i> Enviar
-                    </button>
-                </div>
-            </div>
-        </div>
+        <p>🛡️ API DE EL VIGILANTE · Plan Pro · Música: Acento Quinto Real</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // ==================== REPRODUCTOR DE MÚSICA ====================
+        // Reproductor de música
         const playlist = [
             { name: "Acento Quinto Real", artist: "Acento Quinto Real", url: "https://files.catbox.moe/65kqmi.mp3" },
             { name: "Una vaina loca", artist: "Acento Quinto Real", url: "https://files.catbox.moe/g2zd2z.mp3" }
@@ -1108,15 +545,12 @@
         let currentSongIndex = 0, isPlaying = false, isMinimized = false;
         const audioEl = document.getElementById('audioPlayer');
         const playPauseBtn = document.getElementById('playPauseBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
         const songNameEl = document.getElementById('songName');
         const artistNameEl = document.getElementById('artistName');
         const progressBar = document.getElementById('progressBar');
         const progressContainer = document.getElementById('progressContainer');
         const currentTimeEl = document.getElementById('currentTime');
         const durationEl = document.getElementById('duration');
-        const toggleMinimizeBtn = document.getElementById('toggleMinimize');
         const musicPlayerDiv = document.getElementById('musicPlayer');
 
         function loadSong(index) {
@@ -1132,16 +566,38 @@
         function playPauseSong() { isPlaying ? audioEl.pause() : audioEl.play().catch(e=>console.log); isPlaying = !isPlaying; updatePlayIcon(); }
         function nextSong() { currentSongIndex = (currentSongIndex+1)%playlist.length; loadSong(currentSongIndex); if(!isPlaying) playPauseSong(); }
         function prevSong() { currentSongIndex = (currentSongIndex-1+playlist.length)%playlist.length; loadSong(currentSongIndex); if(!isPlaying) playPauseSong(); }
-        function updateProgress() { if(audioEl.duration && !isNaN(audioEl.duration)) { progressBar.style.width = `${(audioEl.currentTime/audioEl.duration)*100}%`; currentTimeEl.textContent = formatTime(audioEl.currentTime); durationEl.textContent = formatTime(audioEl.duration); } }
-        function formatTime(s) { if(isNaN(s)) return "0:00"; const m = Math.floor(s/60), seg = Math.floor(s%60); return `${m}:${seg.toString().padStart(2,'0')}`; }
-        function setProgress(e) { const rect = progressContainer.getBoundingClientRect(); audioEl.currentTime = ((e.clientX - rect.left)/rect.width) * audioEl.duration; }
-        function toggleMinimizePlayer() { isMinimized = !isMinimized; musicPlayerDiv.classList.toggle('minimized'); toggleMinimizeBtn.textContent = isMinimized ? '+' : '−'; }
-        playPauseBtn.onclick = playPauseSong; nextBtn.onclick = nextSong; prevBtn.onclick = prevSong;
-        audioEl.ontimeupdate = updateProgress; audioEl.onended = nextSong;
-        progressContainer.onclick = setProgress; toggleMinimizeBtn.onclick = toggleMinimizePlayer;
+        function updateProgress() {
+            if(audioEl.duration && !isNaN(audioEl.duration)) {
+                progressBar.style.width = `${(audioEl.currentTime/audioEl.duration)*100}%`;
+                currentTimeEl.textContent = formatTime(audioEl.currentTime);
+                durationEl.textContent = formatTime(audioEl.duration);
+            }
+        }
+        function formatTime(s) {
+            if(isNaN(s)) return "0:00";
+            const m = Math.floor(s/60), seg = Math.floor(s%60);
+            return `${m}:${seg.toString().padStart(2,'0')}`;
+        }
+        function setProgress(e) {
+            const rect = progressContainer.getBoundingClientRect();
+            audioEl.currentTime = ((e.clientX - rect.left)/rect.width) * audioEl.duration;
+        }
+        function toggleMinimizePlayer() {
+            isMinimized = !isMinimized;
+            musicPlayerDiv.classList.toggle('minimized');
+            document.getElementById('toggleMinimize').textContent = isMinimized ? '+' : '−';
+        }
+        
+        playPauseBtn.onclick = playPauseSong;
+        document.getElementById('nextBtn').onclick = nextSong;
+        document.getElementById('prevBtn').onclick = prevSong;
+        audioEl.ontimeupdate = updateProgress;
+        audioEl.onended = nextSong;
+        progressContainer.onclick = setProgress;
+        document.getElementById('toggleMinimize').onclick = toggleMinimizePlayer;
         loadSong(0);
 
-        // ==================== AUTENTICACIÓN ====================
+        // Autenticación
         const INVITE_CODE = "elvigilante";
         function getUsers() { return JSON.parse(localStorage.getItem('vigilanteUsers') || '[]'); }
         function saveUsers(users) { localStorage.setItem('vigilanteUsers', JSON.stringify(users)); }
@@ -1169,7 +625,10 @@
             renderAuthForm(view);
         }
 
-        function logout() { localStorage.removeItem('vigilanteCurrentUser'); showAuthScreen('login'); }
+        function logout() {
+            localStorage.removeItem('vigilanteCurrentUser');
+            showAuthScreen('login');
+        }
 
         function updateUserUI() {
             const userSection = document.getElementById('userSection');
@@ -1214,8 +673,12 @@
             if (!username || !password) return alert('Completa todos los campos');
             const users = getUsers();
             const user = users.find(u => u.username === username && u.password === password);
-            if (user) { setCurrentUser({ username: user.username }); showMainInterface(); }
-            else { alert('Credenciales incorrectas'); }
+            if (user) {
+                setCurrentUser({ username: user.username });
+                showMainInterface();
+            } else {
+                alert('Credenciales incorrectas');
+            }
         }
 
         function register() {
@@ -1233,66 +696,80 @@
             alert('Cuenta creada exitosamente. ¡Bienvenido al Plan Pro!');
         }
 
-        // ==================== API Y DASHBOARD ====================
+        // Configuración de la API
         let settings = {
             name: "EL VIGILANTE",
             version: "v2.0 · Plan Pro",
-            description: "API profesional con endpoints exclusivos. Acceso mediante código de invitación.",
-            header: { imageSrc: ["https://files.catbox.moe/0tha19.png"], imageSize: { desktop: "50%" } },
-            apiSettings: { creator: "El Vigilante" },
+            description: "API profesional con endpoints exclusivos.",
+            header: { imageSrc: ["https://files.catbox.moe/0tha19.png"] },
             categories: [
-                { name: "Usuarios", items: [{ name: "Perfil", path: "/api/user", desc: "Obtener perfil de usuario", innerDesc: "Devuelve datos del perfil del usuario autenticado" }] },
-                { name: "Contenido", items: [{ name: "Feed", path: "/api/feed", desc: "Feed dinámico de contenido", innerDesc: "Obtiene las últimas publicaciones" }] },
-                { name: "Búsqueda", items: [{ name: "YouTube Search", path: "/search/youtube?q=", desc: "Buscar videos en YouTube", innerDesc: "Ejemplo: Goku Black" }] },
-                { name: "Música", items: [{ name: "Canción actual", path: "/api/song", desc: "Información de la canción actual", innerDesc: "Devuelve los datos de la canción que suena actualmente" }] }
+                { name: "Usuarios", items: [{ name: "Perfil", path: "/api/user", desc: "Obtener perfil de usuario" }] },
+                { name: "Contenido", items: [{ name: "Feed", path: "/api/feed", desc: "Feed dinámico de contenido" }] },
+                { name: "Búsqueda", items: [{ name: "YouTube Search", path: "/search/youtube?q=", desc: "Buscar videos en YouTube" }] },
+                { name: "Música", items: [{ name: "Canción actual", path: "/api/song", desc: "Información de la canción actual" }] }
             ]
         };
 
-        async function loadSettings() {
-            try { const r = await fetch('/src/settings.json'); if(r.ok) settings = await r.json(); } catch(e) {}
-            document.getElementById('apiName').innerHTML = settings.name || "EL VIGILANTE";
-            document.getElementById('footerText').innerHTML = `🛡️ ${settings.name} · Plan Pro · Música: Acento Quinto Real`;
-            const categoriesNav = document.getElementById('categoriesNav');
-            categoriesNav.innerHTML = '';
-            if(settings.categories) settings.categories.forEach(cat => {
-                const div = document.createElement('div');
-                div.className = 'sidebar-item';
-                div.dataset.page = 'category';
-                div.dataset.category = cat.name;
-                div.innerHTML = `<i class="fas fa-folder"></i> ${cat.name}`;
-                categoriesNav.appendChild(div);
-            });
+        function getTotalEndpoints() {
+            let t = 0;
+            settings.categories?.forEach(c => t += c.items.length);
+            return t;
         }
-
-        function getTotalEndpoints() { let t=0; settings.categories?.forEach(c=> t+=c.items.length); return t; }
 
         function initUI() {
-            const menuToggle = document.getElementById('menuToggle'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
-            menuToggle.onclick = () => { menuToggle.classList.toggle('active'); sidebar.classList.toggle('active'); overlay.classList.toggle('active'); };
-            overlay.onclick = () => { menuToggle.classList.remove('active'); sidebar.classList.remove('active'); overlay.classList.remove('active'); };
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            menuToggle.onclick = () => {
+                menuToggle.classList.toggle('active');
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            };
+            
+            overlay.onclick = () => {
+                menuToggle.classList.remove('active');
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            };
+            
             document.querySelectorAll('.sidebar-item').forEach(item => {
                 item.onclick = () => {
-                    document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+                    document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
                     item.classList.add('active');
-                    const page = item.dataset.page, cat = item.dataset.category;
-                    renderPage(page==='category'?'category':page, cat);
-                    menuToggle.classList.remove('active'); sidebar.classList.remove('active'); overlay.classList.remove('active');
+                    const page = item.dataset.page;
+                    const cat = item.dataset.category;
+                    renderPage(page === 'category' ? 'category' : page, cat);
+                    menuToggle.classList.remove('active');
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
                 };
             });
+            
             updateUserUI();
+            
+            // Cargar categorías en el sidebar
+            const categoriesNav = document.getElementById('categoriesNav');
+            if (settings.categories) {
+                settings.categories.forEach(cat => {
+                    const div = document.createElement('div');
+                    div.className = 'sidebar-item';
+                    div.dataset.page = 'category';
+                    div.dataset.category = cat.name;
+                    div.innerHTML = `<i class="fas fa-folder"></i> ${cat.name}`;
+                    categoriesNav.appendChild(div);
+                });
+            }
         }
 
-        function renderPage(page, category=null) {
+        function renderPage(page, category = null) {
             const container = document.getElementById('mainContent');
-            const currentUser = getCurrentUser();
-            if(page === 'home') {
-                const imgSrc = Array.isArray(settings.header.imageSrc)? settings.header.imageSrc[0]:'https://files.catbox.moe/0tha19.png';
+            
+            if (page === 'home') {
+                const imgSrc = settings.header.imageSrc[0];
                 container.innerHTML = `
                     <div class="hero-section">
-                        <div class="hero-image-container">
-                            <div class="hero-glow"></div>
-                            <img src="${imgSrc}" alt="EL VIGILANTE" class="hero-image">
-                        </div>
+                        <img src="${imgSrc}" alt="EL VIGILANTE" class="hero-image">
                         <h1 class="hero-title">API DE EL VIGILANTE</h1>
                         <p class="hero-subtitle">${settings.description}</p>
                         <div class="hero-version">
@@ -1307,7 +784,7 @@
                         </div>
                         <div class="stat-card">
                             <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
-                            <div class="stat-number">${settings.categories?.length||0}</div>
+                            <div class="stat-number">${settings.categories?.length || 0}</div>
                             <div class="stat-label">Categorías</div>
                         </div>
                         <div class="stat-card">
@@ -1325,244 +802,41 @@
                         <div class="feature-card">
                             <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                             <div class="feature-title">Rendimiento Óptimo</div>
-                            <div class="feature-desc">API de alta velocidad con respuestas en milisegundos para una experiencia fluida.</div>
+                            <div class="feature-desc">API de alta velocidad con respuestas en milisegundos.</div>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon"><i class="fas fa-lock"></i></div>
                             <div class="feature-title">Acceso Exclusivo</div>
-                            <div class="feature-desc">Solo usuarios con código de invitación pueden acceder a los endpoints premium.</div>
+                            <div class="feature-desc">Solo usuarios con código de invitación pueden acceder.</div>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon"><i class="fas fa-headphones"></i></div>
                             <div class="feature-title">Música Integrada</div>
-                            <div class="feature-desc">Reproductor de Acento Quinto Real para disfrutar mientras trabajas con la API.</div>
+                            <div class="feature-desc">Reproductor de Acento Quinto Real integrado.</div>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
                             <div class="feature-title">Estadísticas en Vivo</div>
-                            <div class="feature-desc">Monitoreo en tiempo real del estado de todos los servicios disponibles.</div>
+                            <div class="feature-desc">Monitoreo en tiempo real de los servicios.</div>
                         </div>
                     </div>
                 `;
-            } else if(page === 'status') {
-                container.innerHTML = `
-                    <div class="page-header">
-                        <div class="page-title">Estado del Sistema</div>
-                        <div class="page-subtitle">Monitoreo en tiempo real de los servicios</div>
-                    </div>
-                    <div class="status-grid">
-                        <div class="status-card">
-                            <div class="status-card-title">API Status</div>
-                            <div class="status-card-value"><span class="status-indicator"></span> Online</div>
-                        </div>
-                        <div class="status-card">
-                            <div class="status-card-title">Versión</div>
-                            <div class="status-card-value">${settings.version}</div>
-                        </div>
-                        <div class="status-card">
-                            <div class="status-card-title">Música Activa</div>
-                            <div class="status-card-value" style="color:#9b4dff;">🎵 Una vaina loca</div>
-                        </div>
-                        <div class="status-card">
-                            <div class="status-card-title">Artista</div>
-                            <div class="status-card-value">Acento Quinto Real</div>
-                        </div>
-                        <div class="status-card">
-                            <div class="status-card-title">Endpoints Totales</div>
-                            <div class="status-card-value">${getTotalEndpoints()}</div>
-                        </div>
-                        <div class="status-card">
-                            <div class="status-card-title">Conexiones</div>
-                            <div class="status-card-value">Activo</div>
-                        </div>
-                    </div>
-                `;
-            } else if(page === 'category' && category) {
-                const cat = settings.categories.find(c=>c.name===category); if(!cat) return;
-                container.innerHTML = `
-                    <div class="page-header">
-                        <div class="page-title"><i class="fas fa-folder-open me-2" style="color:#9b4dff;"></i> ${cat.name}</div>
-                        <div class="page-subtitle">${cat.items.length} endpoints disponibles</div>
-                    </div>
-                    <div class="search-box">
-                        <input type="text" class="search-input" placeholder="🔍 Buscar endpoints en ${cat.name}..." id="searchInput">
-                    </div>
-                    <div class="endpoints-grid" id="endpointsGrid">
-                        ${cat.items.map(item=>`
-                            <div class="endpoint-card" data-name="${item.name.toLowerCase()}">
-                                <div>
-                                    <div class="endpoint-method">GET</div>
-                                    <div class="endpoint-name">${item.name}</div>
-                                    <div class="endpoint-desc">${item.desc}</div>
-                                </div>
-                                <button class="endpoint-btn" data-path="${item.path}" data-name="${item.name}" data-desc="${item.desc}" data-inner="${item.innerDesc||''}">
-                                    Probar <i class="fas fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-                setupSearch(); attachEndpointEvents();
-            } else if(page === 'all') {
-                container.innerHTML = `
-                    <div class="page-header">
-                        <div class="page-title">Todos los Endpoints</div>
-                        <div class="page-subtitle">${getTotalEndpoints()} endpoints en ${settings.categories?.length||0} categorías</div>
-                    </div>
-                    <div class="search-box">
-                        <input type="text" class="search-input" placeholder="🔍 Buscar entre todos los endpoints..." id="searchInput">
-                    </div>
-                    <div id="allCategories"></div>
-                `;
-                const allDiv = document.getElementById('allCategories');
-                settings.categories?.forEach(cat=>{
-                    allDiv.innerHTML += `
-                        <div class="category-section" data-category="${cat.name}" style="margin-bottom:32px;">
-                            <h3 style="color:#c9b0ff; font-size:18px; font-weight:700; margin-bottom:16px;">
-                                <i class="fas fa-folder me-2" style="color:#9b4dff;"></i> ${cat.name}
-                            </h3>
-                            <div class="endpoints-grid">
-                                ${cat.items.map(item=>`
-                                    <div class="endpoint-card" data-name="${item.name.toLowerCase()}">
-                                        <div>
-                                            <div class="endpoint-method">GET</div>
-                                            <div class="endpoint-name">${item.name}</div>
-                                            <div class="endpoint-desc">${item.desc}</div>
-                                        </div>
-                                        <button class="endpoint-btn" data-path="${item.path}" data-name="${item.name}" data-desc="${item.desc}" data-inner="${item.innerDesc||''}">
-                                            Probar <i class="fas fa-arrow-right"></i>
-                                        </button>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                });
-                setupSearch(); attachEndpointEvents();
             }
-        }
-
-        function setupSearch() {
-            const inp = document.getElementById('searchInput'); if(!inp) return;
-            inp.oninput = (e) => {
-                const term = e.target.value.toLowerCase();
-                document.querySelectorAll('.endpoint-card').forEach(card=>{
-                    card.style.display = card.dataset.name.includes(term) ? '' : 'none';
-                });
-                document.querySelectorAll('.category-section').forEach(section=>{
-                    const visible = section.querySelectorAll('.endpoint-card:not([style*="display: none"])');
-                    section.style.display = visible.length ? '' : 'none';
-                });
-            };
-        }
-
-        function attachEndpointEvents() {
-            document.querySelectorAll('.endpoint-btn').forEach(btn=>{
-                btn.onclick = ()=> openModal(btn.dataset.path, btn.dataset.name, btn.dataset.desc, btn.dataset.inner);
-            });
-        }
-
-        async function openModal(path, name, desc, innerDesc) {
-            const modal = new bootstrap.Modal(document.getElementById('apiModal'));
-            document.getElementById('modalTitle').textContent = name;
-            document.getElementById('modalDesc').textContent = desc;
-            const urlParts = path.split('?'); const basePath = urlParts[0];
-            const existingParams = new URLSearchParams(urlParts[1]||'');
-            const baseUrl = window.location.origin + basePath;
-            document.getElementById('endpointBox').style.display = 'block';
-            document.getElementById('endpointBox').innerHTML = `<code>${baseUrl}</code>`;
-            const liveUrlBox = document.getElementById('liveUrlBox');
-            const liveUrlText = document.getElementById('liveUrlText');
-            liveUrlBox.style.display = 'flex';
-            document.getElementById('paramsContainer').innerHTML = '';
-            document.getElementById('responseContainer').innerHTML = '';
-            document.getElementById('submitBtn').style.display = 'none';
-            document.getElementById('loadingContainer').style.display = 'none';
-            const hasParams = existingParams.keys().next().done === false;
-
-            function updateLiveUrl() {
-                const params = new URLSearchParams();
-                document.querySelectorAll('#paramsContainer .param-input').forEach(inp=>{
-                    if(inp.value.trim()) params.append(inp.dataset.param, inp.value.trim());
-                });
-                let final = baseUrl;
-                const ps = params.toString();
-                if(ps) final += '?'+ps;
-                else if(hasParams && document.querySelectorAll('#paramsContainer .param-input').length===0) final += '?'+existingParams.toString();
-                liveUrlText.textContent = final;
-            }
-
-            if(hasParams) {
-                const paramsContainer = document.getElementById('paramsContainer');
-                for(let [k,v] of existingParams) {
-                    const inp = document.createElement('input');
-                    inp.type='text'; inp.className='param-input';
-                    inp.placeholder=`${k} (ej: ${v||'valor'})...`;
-                    inp.dataset.param=k;
-                    paramsContainer.appendChild(inp);
-                }
-                if(innerDesc) paramsContainer.innerHTML += `<div style="color:#988ab3; font-size:12px; margin-bottom:12px;"><i class="fas fa-info-circle me-1" style="color:#9b4dff;"></i> ${innerDesc}</div>`;
-                const submitBtn = document.getElementById('submitBtn'); submitBtn.style.display='inline-flex';
-                paramsContainer.querySelectorAll('.param-input').forEach(i=>i.addEventListener('input',updateLiveUrl));
-                updateLiveUrl();
-                submitBtn.onclick = async ()=>{
-                    const params = new URLSearchParams();
-                    document.querySelectorAll('#paramsContainer .param-input').forEach(inp=>{ if(inp.value.trim()) params.append(inp.dataset.param, inp.value.trim()); });
-                    let finalUrl = baseUrl; const pstr = params.toString(); if(pstr) finalUrl += '?'+pstr;
-                    document.getElementById('loadingContainer').style.display='block';
-                    document.getElementById('responseContainer').innerHTML='';
-                    try {
-                        const resp = await fetch(finalUrl);
-                        const ct = resp.headers.get('Content-Type');
-                        if(ct && ct.startsWith('image/')){
-                            const blob = await resp.blob();
-                            const img = document.createElement('img');
-                            img.src=URL.createObjectURL(blob);
-                            img.className='w-100 mt-2 rounded';
-                            document.getElementById('responseContainer').appendChild(img);
-                        } else {
-                            const data = await resp.json();
-                            document.getElementById('responseContainer').innerHTML = `<pre class="response-box">${JSON.stringify(data,null,2)}</pre>`;
-                        }
-                    } catch(e){
-                        document.getElementById('responseContainer').innerHTML = `<pre class="response-box" style="color:#ef4444;">Error: ${e.message}</pre>`;
-                    }
-                    document.getElementById('loadingContainer').style.display='none';
-                };
-            } else {
-                liveUrlText.textContent = baseUrl;
-                document.getElementById('loadingContainer').style.display='block';
-                try {
-                    const resp = await fetch(baseUrl);
-                    const ct = resp.headers.get('Content-Type');
-                    if(ct && ct.startsWith('image/')){
-                        const blob = await resp.blob();
-                        const img = document.createElement('img');
-                        img.src=URL.createObjectURL(blob);
-                        img.className='w-100 mt-2 rounded';
-                        document.getElementById('responseContainer').appendChild(img);
-                    } else {
-                        const data = await resp.json();
-                        document.getElementById('responseContainer').innerHTML = `<pre class="response-box">${JSON.stringify(data,null,2)}</pre>`;
-                    }
-                } catch(e){
-                    document.getElementById('responseContainer').innerHTML = `<pre class="response-box" style="color:#ef4444;">Error: ${e.message}</pre>`;
-                }
-                document.getElementById('loadingContainer').style.display='none';
-            }
-            modal.show();
         }
 
         async function start() {
-            await loadSettings();
             initUI();
             const currentUser = getCurrentUser();
-            if (currentUser) { showMainInterface(); }
-            else { showAuthScreen('login'); }
+            if (currentUser) {
+                showMainInterface();
+            } else {
+                showAuthScreen('login');
+            }
             const loading = document.getElementById('loadingScreen');
             loading.style.opacity = '0';
             setTimeout(() => { loading.style.display = 'none'; }, 500);
         }
+
         start();
     </script>
 </body>
